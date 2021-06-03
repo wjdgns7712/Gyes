@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>물성치예측</title>
+</head>
+<body>
+    <span style="float: left;">
+        <div align='center'>
+            <p>넣으려는 재료의 종류와 유량비를 입력하세요. ex) P001, R001, F001</p>
+            <p>넣지않으려면 N을 입력하세요.</p>
+            <form action="/algo" method="post">
+                <div>
+                    <!-- PP정보 기입 -->
+                    <label for="formGroupExampleInput">PP 재료1</label>
+                    <input type="text" name='PP1_name' id="formGroupExampleInput"  placeholder="PP1 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='PP1_rate' id="formGroupExampleInput" value="0" placeholder="PP1 유량비를 입력하세요.">
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">PP 재료2</label>
+                    <input type="text" name='PP2_name' id="formGroupExampleInput" value="N" placeholder="PP2 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='PP2_rate' id="formGroupExampleInput" value="0" placeholder="PP2 유량비를 입력하세요.">    
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">PP 재료3</label>
+                    <input type="text" name='PP3_name' id="formGroupExampleInput" value="N" placeholder="PP3 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='PP3_rate' id="formGroupExampleInput" value="0" placeholder="PP3 유량비를 입력하세요."> 
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">PP 재료4</label>
+                    <input type="text" name='PP4_name' id="formGroupExampleInput" value="N" placeholder="PP4 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='PP4_rate' id="formGroupExampleInput" value="0" placeholder="PP4 유량비를 입력하세요.">               
+                </div>
+                <hr width="600" color="powderblue" size="1">
+                <div>
+                    <!-- R정보 기입 -->
+                    <label for="formGroupExampleInput">RB 재료1</label>
+                    <input type="text" name='R1_name' id="formGroupExampleInput" value="N" placeholder="R1 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                  <input type="text" name='R1_rate' id="formGroupExampleInput" value="0" placeholder="R1 유량비를 입력하세요."> 
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">RB 재료2</label>
+                    <input type="text" name='R2_name' id="formGroupExampleInput" value="N" placeholder="R2 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='R2_rate' id="formGroupExampleInput" value="0" placeholder="R2 유량비를 입력하세요.">             
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">RB 재료3</label>
+                    <input type="text" name='R3_name' id="formGroupExampleInput" value="N" placeholder="R3 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='R3_rate' id="formGroupExampleInput" value="0" placeholder="R3 유량비를 입력하세요.">    
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">RB 재료4</label>
+                    <input type="text" name='R4_name' id="formGroupExampleInput" value="N" placeholder="R4 재료를 입력하세요.">    
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='R4_rate' id="formGroupExampleInput" value="0" placeholder="R4 유량비를 입력하세요.">     
+                </div>            
+                <hr width="600" color="powderblue" size="1">
+                <div>
+                    <!-- F정보 기입 -->
+                    <label for="formGroupExampleInput">FL 재료1</label>
+                    <input type="text" name='F1_name' id="formGroupExampleInput" value="N" placeholder="F1 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name ='F1_rate' id="formGroupExampleInput" value="0" placeholder="F1 유량비를 입력하세요.">      
+                </div>
+                <div>
+                    <label for="formGroupExampleInput">FL 재료2</label>
+                    <input type="text" name='F2_name' id="formGroupExampleInput" value="N" placeholder="F2 재료를 입력하세요.">    
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='F2_rate' id="formGroupExampleInput" value="0" placeholder="F2 유량비를 입력하세요."> 
+                </div>   
+                <div>
+                    <label for="formGroupExampleInput">FL 재료3</label>
+                    <input type="text" name='F3_name' id="formGroupExampleInput" value="N" placeholder="F3 재료를 입력하세요.">
+                    <label for="formGroupExampleInput">유량비</label>
+                    <input type="text" name='F3_rate' id="formGroupExampleInput" value="0" placeholder="F3 유량비를 입력하세요.">  
+                </div>            
+                <br>
+                <button !important type="submit">입력</button>
+          </div>
+    </span>
+    <span align='center'>
+        <div>
+            <br>
+            <br>
+            {% if outdata %}
+            <p>예상물성</p>
+            <h5>비중 : {{ outdata[0] }}</h5>
+            <h5>굴곡탄성률 : {{ outdata[1] }}</h5>
+            <h5>굴곡강도 : {{ outdata[2] }}</h5>
+            <h5>HDT : {{ outdata[3] }}</h5>
+            <h5>IZOD충격강도 : {{ outdata[4] }}</h5>
+            <h5>MI : {{ outdata[5] }}</h5>
+            <h5>인장강도 : {{ outdata[6] }}</h5>
+           {% endif %}
+        </div>
+    </span>
+</body>
+</html>

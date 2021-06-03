@@ -1,0 +1,1 @@
+hosting.bat | run_server.bat

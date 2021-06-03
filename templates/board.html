@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시판</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <style>
+        td{
+            height: 50px;
+            border-bottom: solid 1px #444444;
+            margin: 8px;
+            padding: 8px;
+            text-align : center;
+        }
+
+        th,tr{
+            text-align: center;
+            border-bottom : 1px solid #444444;
+            border-collapse: collapse;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        <table style="border: solid 1px; margin-left: auto; margin-right: auto;">
+
+            <tr>
+                <th style = "font-size : 20px;width: 70px;height: 50px;">
+                    번호
+                </th>
+                <th style = "font-size : 20px;width: 70px;height: 50px;">
+                    작성자
+                </th>
+                <th style = "font-size : 20px;width: 70px;height: 50px;">
+                    업체명
+                </th>
+                <th style = "font-size : 20px;width: 70px;height: 50px;">
+                    내용
+                </th>
+                <th style = "font-size : 20px;width: 70px;height: 50px;">
+                    요구물성치
+                </th>
+                <th style = "font-size : 20px;width: 70px;height: 50px;">
+                    조회수
+                </th>
+            </tr>
+            <tr>
+                <td align="center">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-volume-up-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z"/>
+                     <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z"/>
+                     <path d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707z"/>
+                     <path fill-rule="evenodd" d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z"/>
+                </svg>
+                    1
+                </td>
+                <td>
+                    김나현
+                </td>
+                <td align="right">
+                    현대자동차
+                </td>
+                <td align="right">
+                    C/PAD 만들건데, 물성 빨리 맞춰줄 업체 구합니다.
+                </td>
+                <td>
+                    비중 >= 0.925<br> 
+                    굴곡탄성률 >=2300<br>
+                    굴곡강도 dontcare<br>
+                    IZOD충격강도 >= 17<br>
+                    HDT dontcare<br>
+                    MI dontcare<br>
+                    인장강도 dontcare
+                </td>
+                <td>
+                    1332
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    2
+                </td>
+                <td>
+                    신충현
+                </td>
+                <td align="right">
+                    르노삼성
+                </td>
+                <td align="right">
+                    9월 중으로 받고 싶습니다.
+                </td>
+                <td>
+                    비중 >= 0.825<br>
+                    굴곡탄성률 1213<br>
+                    굴곡강도 31.9<br>
+                    IZOD충격강도 dontcare<br>
+                    HDT dontcare<br>
+                    MI 27.3<br>
+                    인장강도 dontcare
+                </td>
+                <td>
+                    1211
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    3
+                </td>
+                <td>
+                    황미경
+                </td>
+                <td align="right">
+                    Mercedes Benz
+                </td>
+                <td align="right">
+                    이번주 내로 거래할 업체 구해요! 보수는 넉넉히~
+                    <img src="./static/img/hot.png" width='40' height='20'>
+                </td>
+                <td>
+                    비중 >= 0.725<br>
+                    굴곡탄성률 dontcare<br>
+                    굴곡강도 dontcare<br>
+                    IZOD충격강도 dontcare<br>
+                    HDT dontcare<br>
+                    MI dontcare<br>
+                    인장강도 dontcare
+                </td>
+                <td>
+                    3232
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    4
+                </td>
+                <td>
+                    황정훈
+                </td>
+                <td align="right">
+                    Tesla
+                </td>
+                <td align="right">
+                    다음주 내에 충격강도랑 굴곡탄성률만 맞춰주실 업체 없나요? 자동차 도어 만드려고 하는데...
+                    <img src="https://image.flaticon.com/icons/svg/891/891450.svg" width='70' height='40'>
+                </td>
+                <td>
+                    비중 >= 0.625<br>
+                    굴곡탄성률 3602<br>
+                    굴곡강도 dontcare<br>
+                    IZOD충격강도 46<br>
+                    HDT dontcare<br>
+                    MI dontcare<br>
+                    인장강도 dontcare
+                </td>
+                <td>
+                    777
+                </td>
+            </tr>
+<!--            <tr>-->
+<!--                <td align="center">-->
+<!--                    5-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    전종식-->
+<!--                </td>-->
+<!--                <td align="right">-->
+<!--                    청와대-->
+<!--                </td>-->
+<!--                <td align="right">-->
+<!--                    우리나라에서 살고싶으면 만들어오세요-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    비중 >= 0.525-->
+<!--                    굴곡탄성률 dontcare-->
+<!--                    굴곡강도 dontcare-->
+<!--                    IZOD충격강도 dontcare-->
+<!--                    HDT dontcare-->
+<!--                    MI dontcare-->
+<!--                    인장강도 dontcare-->
+<!--                </td>-->
+<!--                <td>-->
+<!--                    154-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--            </tr>-->
+        </table>
+    </div>
+</body>
+</html>
